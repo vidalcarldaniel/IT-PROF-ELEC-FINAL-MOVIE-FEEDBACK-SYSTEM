@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { askAi } from '../lib/ai';
 import Supabase from '../lib/supabase';
+import { Bot } from 'lucide-react'
 
 // AiChat widget: visible only when `currentUser` prop exists (user or admin)
 export default function AiChat({ currentUser }) {
@@ -138,10 +139,10 @@ export default function AiChat({ currentUser }) {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500 text-white shadow-lg"
+          className="flex items-center gap-2 px-4 py-3 rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-400 transition cursor-pointer"
           title="Open Chat"
         >
-          <span className="font-semibold">Chat</span>
+          <span className="animate-pulse"><Bot /></span>
         </button>
       )}
 
